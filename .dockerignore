@@ -1,0 +1,26 @@
+# ---- 依赖 / 缓存（不进镜像，也不当构建上下文浪费带宽）----
+.venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.coverage
+
+# ---- 本地数据（隐私：绝不把真实库存打进镜像；后端会自建空文件）----
+data/inventory.json
+data/*.tmp
+
+# ---- 与本镜像无关的仓库内容 ----
+.git
+.gitignore
+.claude
+docs
+tests
+test.ipynb
+小金库-wx
+小金库-xhs
+*.zip
+node_modules
+dist
+build

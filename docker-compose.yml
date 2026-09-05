@@ -1,0 +1,31 @@
+# 小金库 — 一键起后端(6011)
+#
+# 用法（仓库根目录）：
+#   docker compose up -d --build      # 构建并后台启动
+#   docker compose logs -f vault      # 看日志
+#   docker compose down               # 停止（数据仍在卷里）
+#
+# 数据持久化在命名卷 vault-data（对应容器内 /app/data/inventory.json），
+# 删容器不丢数据；备份直接复制卷目录里的 inventory.json 即可。
+services:
+  vault:
+    build: .
+    image: vault:latest
+    container_name: vault
+    restart: unless-stopped
+    ports:
+      - "6011:6011"           # 本机/局域网 http://<IP>:6011
+    environment:
+      # 显式指向卷内路径（与后端默认值一致，可省略）
+      VAULT_DATA_FILE: /app/data/inventory.json
+    volumes:
+      - vault-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:6011/', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  vault-data:

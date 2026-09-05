@@ -81,6 +81,8 @@ cd /d/codes/vault
 git add -A
 git commit -m "改动说明，例如 fix: 修复价格格式"
 git push
+
+git commit --amend --no-edit
 ```
 
 ---
