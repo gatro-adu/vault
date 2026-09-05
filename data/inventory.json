@@ -1,0 +1,195 @@
+{
+  "schema_version": 3,
+  "categories": [],
+  "locations": [],
+  "owners": [],
+  "items": [
+    {
+      "id": "item_62582d2aee5a4d4c9d02de4001474695",
+      "name": "手机-iPhone 17",
+      "quantity": 1,
+      "notes": "",
+      "tags": [
+        {
+          "type": "select",
+          "name": "主人",
+          "value": "小熊",
+          "template_id": "tmpl_d1557cf805824f078967cc8c84fa619e"
+        },
+        {
+          "type": "price",
+          "name": null,
+          "value": 509900,
+          "template_id": null
+        },
+        {
+          "type": "date",
+          "name": "购买日期",
+          "value": "2026-06-26",
+          "template_id": "tmpl_04963b371b6b4a6ea42da384547fcbc0"
+        }
+      ],
+      "created_at": "2026-08-15T16:31:25.148058+00:00",
+      "updated_at": "2026-08-27T08:15:03.734594+00:00"
+    },
+    {
+      "id": "item_4861d665614b4b8298da39cb835e9803",
+      "name": "电动车-小牛G400T",
+      "quantity": 1,
+      "notes": "",
+      "tags": [
+        {
+          "type": "select",
+          "name": "主人",
+          "value": "小p",
+          "template_id": "tmpl_d1557cf805824f078967cc8c84fa619e"
+        },
+        {
+          "type": "price",
+          "name": null,
+          "value": 190000,
+          "template_id": null
+        },
+        {
+          "type": "date",
+          "name": "购买日期",
+          "value": "2026-07-13",
+          "template_id": "tmpl_04963b371b6b4a6ea42da384547fcbc0"
+        }
+      ],
+      "created_at": "2026-08-15T16:34:30.366279+00:00",
+      "updated_at": "2026-08-16T06:02:37.450738+00:00"
+    },
+    {
+      "id": "item_484b6de71eb74436bcbc08e4d0802f47",
+      "name": "cpu-12600kf",
+      "quantity": 1,
+      "notes": "",
+      "tags": [
+        {
+          "type": "select",
+          "name": "主人",
+          "value": "小p",
+          "template_id": "tmpl_d1557cf805824f078967cc8c84fa619e"
+        },
+        {
+          "type": "date",
+          "name": "购买日期",
+          "value": "2026-08-08",
+          "template_id": "tmpl_04963b371b6b4a6ea42da384547fcbc0"
+        },
+        {
+          "type": "price",
+          "name": null,
+          "value": 80000,
+          "template_id": null
+        }
+      ],
+      "created_at": "2026-08-27T07:59:07.740589+00:00",
+      "updated_at": "2026-08-27T07:59:18.296010+00:00"
+    },
+    {
+      "id": "item_6fb2dbf152534c868223d0b3381b3d19",
+      "name": "手机-magic 6 pro",
+      "quantity": 1,
+      "notes": "",
+      "tags": [
+        {
+          "type": "select",
+          "name": "主人",
+          "value": "小p",
+          "template_id": "tmpl_d1557cf805824f078967cc8c84fa619e"
+        },
+        {
+          "type": "date",
+          "name": "购买日期",
+          "value": "2024-02-01",
+          "template_id": "tmpl_04963b371b6b4a6ea42da384547fcbc0"
+        },
+        {
+          "type": "price",
+          "name": null,
+          "value": 489900,
+          "template_id": null
+        }
+      ],
+      "created_at": "2026-08-27T08:01:42.233501+00:00",
+      "updated_at": "2026-08-27T08:14:53.810293+00:00"
+    },
+    {
+      "id": "item_b3dac7cac0ef43659140c4ea37bb1086",
+      "name": "电器-电煮锅",
+      "quantity": 1,
+      "notes": "",
+      "tags": [
+        {
+          "type": "select",
+          "name": "主人",
+          "value": "小p",
+          "template_id": "tmpl_d1557cf805824f078967cc8c84fa619e"
+        },
+        {
+          "type": "date",
+          "name": "购买日期",
+          "value": "2026-07-26",
+          "template_id": "tmpl_04963b371b6b4a6ea42da384547fcbc0"
+        },
+        {
+          "type": "price",
+          "name": null,
+          "value": 5310,
+          "template_id": null
+        }
+      ],
+      "created_at": "2026-08-29T08:10:09.481010+00:00",
+      "updated_at": "2026-08-29T08:10:09.481010+00:00"
+    },
+    {
+      "id": "item_bb677c69a44d47d6a5f2bdd5cbd251f9",
+      "name": "电器-电水壶",
+      "quantity": 1,
+      "notes": "",
+      "tags": [
+        {
+          "type": "select",
+          "name": "主人",
+          "value": "小p",
+          "template_id": "tmpl_d1557cf805824f078967cc8c84fa619e"
+        },
+        {
+          "type": "date",
+          "name": "购买日期",
+          "value": "2026-07-24",
+          "template_id": "tmpl_04963b371b6b4a6ea42da384547fcbc0"
+        },
+        {
+          "type": "price",
+          "name": null,
+          "value": 11900,
+          "template_id": null
+        }
+      ],
+      "created_at": "2026-08-29T08:10:45.347653+00:00",
+      "updated_at": "2026-08-29T08:10:45.347653+00:00"
+    }
+  ],
+  "tag_templates": [
+    {
+      "id": "tmpl_d1557cf805824f078967cc8c84fa619e",
+      "name": "主人",
+      "type": "select",
+      "choices": [
+        "小p",
+        "小熊"
+      ],
+      "created_at": "2026-08-15T15:54:06.728742+00:00"
+    },
+    {
+      "id": "tmpl_04963b371b6b4a6ea42da384547fcbc0",
+      "name": "购买日期",
+      "type": "date",
+      "choices": null,
+      "created_at": "2026-08-15T16:31:43.855123+00:00"
+    }
+  ]
+}

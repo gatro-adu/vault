@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小金库</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">XIAO JIN KU</p>
+      <h1>小金库</h1>
+    </div>
+    <button class="primary" id="add-item-button" type="button">新增物品</button>
+  </header>
+
+  <main>
+    <p id="message" class="message" role="status"></p>
+    <section class="summary" aria-label="仓库概览">
+      <div><span>物品总数</span><strong id="item-count">-</strong></div>
+      <div><span>物品总价</span><strong id="valuable-total">-</strong></div>
+    </section>
+
+    <section class="toolbar" aria-label="搜索与筛选">
+      <label class="search-field">
+        <input id="search-input" type="search" placeholder="输入关键字搜索物品名称、标签名或标签内容...">
+      </label>
+    </section>
+
+    <section class="content-grid">
+      <section class="items-panel">
+        <div class="section-heading"><h2>物品清单</h2><span id="result-count"></span></div>
+        <div id="item-list" class="item-list" aria-live="polite"></div>
+      </section>
+      <aside class="management-panel" style="border: 1px solid #d9e2e5; background: #fff;">
+        <section>
+          <div class="section-heading"><h2>自定义标签模板</h2></div>
+          <form id="custom-template-form" style="display: flex; flex-direction: column; gap: 8px; padding: 12px 16px;">
+            <input id="template-name" required maxlength="50" placeholder="标签名 (如: 品牌, 保修期)">
+            <div style="display: flex; gap: 8px; align-items: center; width: 100%;">
+              <select id="template-type" style="flex: 1; padding: 6px 8px; font-size: 13px;">
+                <option value="text">文本框</option>
+                <option value="date">日期</option>
+                <option value="number">数字</option>
+                <option value="select">下拉框</option>
+              </select>
+              <button type="submit" style="padding: 7px 12px; background: #dcefeb; color: #155e55; font-weight: 700; border: none; border-radius: 4px; cursor: pointer;">+</button>
+            </div>
+            <div id="template-choices-container" class="is-hidden" style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-size: 11px; color: #64748b; font-weight: 600;">下拉框选项 (用逗号分隔，至少2个选项)</span>
+              <input id="template-choices" placeholder="选项一, 选项二, 选项三" style="padding: 6px 8px; font-size: 13px;">
+            </div>
+          </form>
+          <ul id="custom-template-list" class="entity-list"></ul>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <dialog id="item-dialog">
+    <form id="item-form" method="dialog">
+      <div class="dialog-header"><h2 id="dialog-title">新增物品</h2><button id="close-dialog-button" class="icon-button" type="button" title="关闭">×</button></div>
+      <input id="item-id" type="hidden">
+
+      <div class="form-grid">
+        <label><span>物品名称</span><input id="item-name" required maxlength="100" placeholder="例如：充电头"></label>
+        <label><span>数量</span><input id="item-quantity" type="number" min="1" value="1" required></label>
+        <label><span>价格（元，选填）</span><input id="item-dialog-price" type="number" min="0.01" step="0.01" placeholder="价格"></label>
+      </div>
+
+      <div class="dialog-tag-toolbar">
+        <h3 class="dialog-tag-title">物品标签</h3>
+        <div class="dialog-tag-add">
+          <select id="add-tag-select">
+          </select>
+          <button id="add-tag-row-btn" type="button" class="small-button add-tag-btn">+ 添加标签</button>
+        </div>
+      </div>
+
+      <div id="tags-editor-container" style="display: flex; flex-direction: column; gap: 8px; max-height: 240px; overflow-y: auto; margin-bottom: 20px; padding-right: 4px;">
+        <!-- Dynamic Tag Rows go here -->
+      </div>
+
+      <label><span>备注</span><textarea id="item-notes" maxlength="2000" rows="3"></textarea></label>
+      <div class="dialog-actions"><button id="delete-item-button" class="danger is-hidden" type="button">删除</button><span></span><button class="secondary" id="cancel-item-button" type="button">取消</button><button class="primary" type="submit">保存</button></div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

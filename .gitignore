@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local inventory data
+# data/inventory.json
+# data/*.tmp
+
+# TLS private key (never commit)
+deploy/ssl/vault.key
+
+
+# 运行时缓存与本地配置（不要上传）
+.ruff_cache/
+.mypy_cache/
+.claude/
+.DS_Store
+小金库-wx/
+小金库-xhs/
