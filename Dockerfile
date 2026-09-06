@@ -7,8 +7,8 @@
 #   docker compose up -d --build
 #
 # 说明：
-#   - 数据文件 data/inventory.json 由 .dockerignore 排除，绝不打进镜像（隐私）
-#   - 后端缺失数据文件时会自动创建，持久化靠挂载卷 /app/data
+#   - 数据文件 data/inventory.json 直接打进镜像（本地有该文件时才能构建）
+#   - 后端缺失数据文件时会自动创建；运行时改动写入容器/卷层
 #   - main.py 里 uvicorn 已绑定 0.0.0.0:6011，与本地 `uv run python main.py` 行为一致
 
 # FROM pengbotao:miniconda
@@ -29,8 +29,9 @@ RUN uv sync --frozen --no-dev --no-install-project
 COPY main.py ./
 COPY frontend ./frontend
 
-# 3) 数据目录：镜像内留一个可写的空挂载点（真实数据只存卷里）
-RUN mkdir -p data && chown -R 1000:1000 /app
+# 3) 数据：把本地 data/inventory.json 一并打进镜像
+COPY data/ ./data/
+RUN chown -R 1000:1000 /app
 USER 1000:1000
 
 EXPOSE 6011

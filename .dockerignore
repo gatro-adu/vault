@@ -7,10 +7,6 @@ __pycache__
 .mypy_cache
 .coverage
 
-# ---- 本地数据（隐私：绝不把真实库存打进镜像；后端会自建空文件）----
-data/inventory.json
-data/*.tmp
-
 # ---- 与本镜像无关的仓库内容 ----
 .git
 .gitignore
