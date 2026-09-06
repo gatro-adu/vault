@@ -19,4 +19,8 @@ dev = [
 testpaths = ["tests"]
 pythonpath = ["."]
 
+# 本项目内覆盖全局镜像配置：本目录用官方 PyPI（不影响其它目录的清华源）
+[tool.uv]
+index-url = "https://pypi.org/simple"
+
 
